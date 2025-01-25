@@ -1,0 +1,298 @@
+/* Add to admin-styles.css */
+.admin-input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--nevada);
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.vehicle-entry {
+    background: var(--bone);
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.preview-frame {
+    width: 100%;
+    height: 600px;
+    border: none;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+.notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 1rem 2rem;
+    background: var(--shark);
+    color: var(--bone);
+    border-radius: 4px;
+    animation: slideIn 0.3s ease;
+}
+/* Import base styles */
+@import 'styles.css';
+
+/* Admin-specific overrides and additions */
+.admin-container {
+    max-width: 1400px;
+    margin: 80px auto 0;
+    padding: 2rem;
+    background: var(--bone);
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: var(--shark);
+    border-radius: 8px;
+    color: var(--bone);
+}
+
+.admin-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.admin-card {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.admin-table th,
+.admin-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--bone);
+}
+
+.admin-table th {
+    background: var(--shark);
+    color: var(--bone);
+}
+
+.admin-form {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.admin-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.admin-button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.admin-button-primary {
+    background: var(--mojo);
+    color: var(--bone);
+}
+
+.admin-button-secondary {
+    background: var(--americano);
+    color: var(--bone);
+}
+
+.admin-button-danger {
+    background: #dc3545;
+    color: var(--bone);
+}
+
+.admin-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background: var(--shark);
+    color: var(--bone);
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--mojo);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .admin-container {
+        padding: 1rem;
+    }
+    
+    .admin-header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .admin-actions {
+        flex-direction: column;
+    }
+}
+
+/* Editor Layout */
+.editor-container {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 2rem;
+}
+
+.editor-panel {
+    background: white;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Section editors matching main page sections */
+.hero-editor,
+.stats-editor,
+.builds-editor {
+    background: var(--shark);
+    color: var(--bone);
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.preview-panel {
+    position: sticky;
+    top: 2rem;
+    height: calc(100vh - 4rem);
+}
+
+/* Form Elements */
+.editor-input {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid var(--nevada);
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    font-family: var(--body-font);
+}
+
+.editor-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--shark);
+}
+
+/* Section Controls */
+.section-editor {
+    background: var(--bone);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+/* Preview Frame */
+.live-preview {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 8px;
+    background: white;
+}
+
+/* Action Buttons */
+.editor-actions {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    display: flex;
+    gap: 1rem;
+    z-index: 100;
+}
+
+.editor-button {
+    background: var(--mojo);
+    color: var(--bone);
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.editor-button:hover {
+    transform: translateY(-2px);
+}
+
+.save-button {
+    background: var(--mojo);
+    color: var(--bone);
+}
+
+.preview-button {
+    background: var(--shark);
+    color: var(--bone);
+}
+
+/* Notifications */
+.editor-notification {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    padding: 1rem 2rem;
+    border-radius: 6px;
+    background: var(--shark);
+    color: var(--bone);
+    transform: translateY(-100%);
+    animation: slideDown 0.3s forwards;
+}
+
+@keyframes slideDown {
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .editor-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .preview-panel {
+        position: relative;
+        height: 600px;
+    }
+}

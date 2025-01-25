@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backroad Kustoms Admin Editor</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="admin-editor.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="admin-container">
+        <div class="admin-header">
+            <h1>Edit Homepage Content</h1>
+            <div class="admin-actions">
+                <button class="admin-button admin-button-primary" onclick="saveChanges()">
+                    <i class="fas fa-save"></i> Save Changes
+                </button>
+                <button class="admin-button admin-button-secondary" onclick="previewChanges()">
+                    <i class="fas fa-eye"></i> Preview
+                </button>
+            </div>
+        </div>
+
+        <div class="editor-container">
+            <div class="editor-panel">
+                <!-- Hero Section Editor -->
+                <div class="section-editor hero-editor">
+                    <h2>Hero Section</h2>
+                    <div class="form-group">
+                        <label class="editor-label">Main Title</label>
+                        <input type="text" id="heroTitle" class="editor-input" placeholder="Enter main title">
+                    </div>
+                    <div class="form-group">
+                        <label class="editor-label">Subtitle</label>
+                        <input type="text" id="heroSubtitle" class="editor-input" placeholder="Enter subtitle">
+                    </div>
+                    <div class="form-group">
+                        <label class="editor-label">Background Video URL</label>
+                        <input type="text" id="heroVideo" class="editor-input" placeholder="Enter video URL">
+                    </div>
+                    <div class="form-group">
+                        <label class="editor-label">Call to Action Text</label>
+                        <input type="text" id="heroCta" class="editor-input" placeholder="Enter CTA text">
+                    </div>
+                </div>
+
+                <!-- Stats Section Editor -->
+                <div class="section-editor stats-editor">
+                    <h2>Stats Section</h2>
+                    <div id="statsContainer">
+                        <div class="stat-entry">
+                            <input type="text" class="editor-input" placeholder="Stat Number">
+                            <input type="text" class="editor-input" placeholder="Stat Label">
+                        </div>
+                    </div>
+                    <button class="editor-button" onclick="addStatEntry()">
+                        <i class="fas fa-plus"></i> Add Stat
+                    </button>
+                </div>
+
+                <!-- Latest Builds Editor -->
+                <div class="section-editor builds-editor">
+                    <h2>Latest Builds</h2>
+                    <div id="buildsContainer">
+                        <div class="vehicle-entry">
+                            <input type="text" class="editor-input" placeholder="Vehicle Title">
+                            <div class="image-upload">
+                                <label class="editor-label">Vehicle Image</label>
+                                <input type="file" accept="image/*" class="editor-input">
+                                <div class="image-preview"></div>
+                            </div>
+                            <textarea class="editor-input" placeholder="Vehicle Description" rows="4"></textarea>
+                            <div class="specs-container">
+                                <input type="text" class="editor-input" placeholder="Engine">
+                                <input type="text" class="editor-input" placeholder="Transmission">
+                                <input type="text" class="editor-input" placeholder="Suspension">
+                            </div>
+                            <div class="tag-container">
+                                <input type="text" class="editor-input" placeholder="Tags (comma separated)">
+                            </div>
+                        </div>
+                    </div>
+                    <button class="editor-button" onclick="addVehicleEntry()">
+                        <i class="fas fa-plus"></i> Add Vehicle
+                    </button>
+                </div>
+            </div>
+
+            <div class="preview-panel">
+                <iframe id="previewFrame" class="live-preview" src="index.html"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script src="admin-editor.js"></script>
+    <script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script>
+    <script src="auth0-config.js"></script>
+    <script>
+        // Check authentication on page load
+        checkAuth();
+    </script>
+</body>
+</html>
+
+
