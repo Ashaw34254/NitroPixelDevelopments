@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -49,6 +48,24 @@
         }
     }
     </script>
+            <!-- **IMPORTANT:** Load the Auth0 SDK **BEFORE** your script -->
+            <script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script>
+        
+            <!-- Load your auth0-config.js file -->
+            <script src="auth0-config.js"></script>
+            <!-- Your HTML content -->
+            <button onclick="login()">Login</button>
+            <!-- script that calls the login function, also in a separated file-->
+            <script>
+            // This needs to be done after the auth0-config file is loaded
+                document.addEventListener('DOMContentLoaded', async function() {
+                   console.log("DOM is fully loaded");
+                    if(window.location.href.includes('/admin-editor.html')){
+                       await initializeAuth0();
+                       console.log("auth0 initialized");
+                    }
+                });
+            </script>
 
     <!-- Performance Optimizations -->
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
@@ -80,8 +97,6 @@
             <li><a href="#vehicles">Vehicles</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#contact">Contact</a></li>
-                    <button onclick="login()" class="login-button">
-                        <i class="fas fa-lock"></i> Login with Auth0
                     </button>
                 </div>
             </div>
@@ -94,14 +109,7 @@
     <span class="sr-only">Menu</span>
     <span class="hamburger"></span>
 </button>
-<script src="https://cdn.auth0.com/js/auth0-spa-js/2.1/auth0-spa-js.production.js"></script>
-<script src="auth0-config.js"></script>
-<script>
-    // Check authentication on page load
-    checkAuth();
-</script>
 
-        <div class="nav-cta">
             <a href="#contact" class="cta-button">Get Started</a>
         </div>
     </nav>
@@ -423,4 +431,7 @@
     <script src="main.js" defer></script>
 </body>
 </html>
+
+
+
 

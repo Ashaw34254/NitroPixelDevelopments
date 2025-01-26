@@ -1,0 +1,12 @@
+<context-param>
+    <param-name>com.auth0.domain</param-name>
+    <param-value>dev-noj5favwv6tb54ne.us.auth0.com</param-value>
+</context-param>
+<context-param>
+    <param-name>com.auth0.clientId</param-name>
+    <param-value>ia2ueRzjk5OPdGTkzCn1Ssx55iuOi62A</param-value>
+</context-param>
+<context-param>
+    <param-name>com.auth0.clientSecret</param-name>
+    <param-value>c-9yodAq7Xgg46hFpkH1ArBJYMTDUjA4dUCuvF55KkPrxyOgsmU-uv2C5LzJ9yJv</param-value>
+</context-param>
